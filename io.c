@@ -784,7 +784,6 @@ create_listener(char *address, int port,
         if(rc != 1) {
             done = (*handler)(rc == 0 ? -ESYNTAX : -errno, NULL, NULL);
             assert(done);
-            close(fd);
             return NULL;
         }
         addr.sin_family = AF_INET;
